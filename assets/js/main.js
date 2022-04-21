@@ -37,11 +37,13 @@ function Calculadora(){
             conta = eval(conta)
             if(!conta){
                 alert('Conta Invalida')
+                this.cleanNumber()
                 return
             }
             this.display.value = conta
         }catch(e){
             alert('conta invalida')
+            this.cleanNumber()
             return
         }
     }
