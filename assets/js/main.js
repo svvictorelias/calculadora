@@ -35,12 +35,14 @@ function Calculadora(){
         try{
             let conta = this.display.value.replace(',','.')
             conta = eval(conta)
-            if(!conta){
+            if(conta || conta === 0){
+                this.display.value = conta
+
+            }else{
                 alert('Conta Invalida')
                 this.cleanNumber()
                 return
             }
-            this.display.value = conta
         }catch(e){
             alert('conta invalida')
             this.cleanNumber()
